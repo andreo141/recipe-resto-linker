@@ -13,6 +13,7 @@
     {{on "click" (action this.getRandomMeal)}}
   >Get Random Meal</button>
 
-  <button class="goto-ingredients-button"><LinkTo @route="ingredients" />Search
-    based on Ingredients</button>
+  <LinkTo @route="ingredients">
+    <button class="goto-ingredients-button" type="button">Search based on Ingredients</button>
+  </LinkTo>
 </div>

@@ -14,15 +14,15 @@ h2 {
   margin-right: auto;
 }
 
-a {
-  text-decoration: none;
-}
-
 img {
   border-radius: 40rem;
   margin-left: auto;
   margin-right: auto;
   width: 500px;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
@@ -42,6 +42,7 @@ button {
 
 /* Button classes */
 .goto-ingredients-button {
+  display: flex;
   background-color: rgb(255 78 78 / 53.9%);
   margin-top: 0.8rem;
 }
