@@ -1,0 +1,18 @@
+{{page-title "Recipe"}}
+
+<div class="recipe-wrapper">
+  {{#if @model}}
+    <img src={{@model.strMealThumb}} alt={{@model.strMeal}} />
+    <h2 class="random-h2">{{@model.strMeal}}</h2>
+  {{else}}
+    <p>No meal available</p>
+  {{/if}}
+  <button
+    class="random-button"
+    type="button"
+    {{on "click" (action this.getRandomMeal)}}
+  >Get Random Meal</button>
+
+  <button class="goto-ingredients-button"><LinkTo @route="ingredients" />Search
+    based on Ingredients</button>
+</div>

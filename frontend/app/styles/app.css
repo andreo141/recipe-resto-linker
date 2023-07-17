@@ -1,0 +1,58 @@
+/* Global */
+body {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border-radius: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+button {
+  padding: 0.5em;
+  font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+/* Wrapper classes */
+.recipe-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Button classes */
+.goto-ingredients-button {
+  background-color: rgb(255 78 78 / 53.9%);
+  margin-top: 0.8rem;
+}
+
+.random-button {
+  background-color: rgb(42 207 36 / 53.9%);
+}
+
+/* Title classes */
+.random-h2 {
+  font-weight: 500;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}

@@ -31,3 +31,15 @@ services:
       - database:database
     volumes:
       - ./config/resources:/config
+
+
+  emberjs:
+    build:
+      context: ./frontend/
+      dockerfile: docker/Dockerfile
+    ports:
+      - 4200:4200
+    volumes:
+      - ./frontend:/frontend
+      - /node_modules
+
