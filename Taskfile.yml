@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  COMPOSE: docker compose
+
+tasks:
+  up:
+    cmds:
+      - $COMPOSE up
+  down:
+    cmds:
+      - $COMPOSE down
+  build:
+    cmds:
+      - $COMPOSE build
