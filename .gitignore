@@ -7,3 +7,4 @@
 docker-compose.override.yml
 
 *.pyc
+/__pycache__/
