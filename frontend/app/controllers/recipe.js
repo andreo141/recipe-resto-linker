@@ -11,6 +11,15 @@ export default class RecipeController extends Controller {
 
   @action
   createRecipe(event) {
+    if (!this.newRecipeName || typeof this.newRecipeName !== 'string') {
+      alert('Please enter a valid recipe name');
+      return;
+    }
+
+    if (!this.newCategory || typeof this.newCategory !== 'string') {
+      alert('Please enter a valid category');
+      return;
+    }
     event.preventDefault();
     // create the new book
     const recipe = this.store.createRecord('recipe', {
