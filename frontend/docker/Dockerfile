@@ -1,7 +1,7 @@
 FROM node:18.6
 
 # Define the working director
-WORKDIR ./frontend
+WORKDIR /frontend
 
 # Clone package.json and package-lock.json
 COPY package*.json ./
