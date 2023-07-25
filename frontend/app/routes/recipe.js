@@ -1,15 +1,9 @@
 import Route from '@ember/routing/route';
-import fetch from 'fetch';
+import { service } from '@ember/service';
 
 export default class RecipeRoute extends Route {
+  @service store;
   async model() {
-    try {
-      const response = await fetch('http://localhost:5000/random_meal');
-      const data = await response.json();
-      console.log(data);
-      return data;
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    return this.store.findAll('recipe');
   }
 }
