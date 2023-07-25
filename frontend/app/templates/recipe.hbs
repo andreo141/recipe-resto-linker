@@ -1,12 +1,42 @@
 {{page-title "Recipe"}}
-<div class="recipe-wrapper">
-  {{#if @model}}
-    <img src={{@model.strMealThumb}} alt={{@model.strMeal}} />
-    <h2 class="random-h2">{{@model.strMeal}}</h2>
-  {{else}}
-    <p>No meal available</p>
-  {{/if}}
-  <button
+
+<header>
+  <h1>Recipes</h1>
+</header>
+
+<div>
+
+  {{! app/templates/recipe.hbs }}
+  <ul>
+    {{#each @model as |recipe|}}
+      <li class="list-recipe">
+        {{recipe.name}}<small> - {{recipe.category}} </small>
+        <button
+          class="remove-btn"
+          {{on "click" (fn this.removeRecipe recipe)}}
+        >Remove</button>
+
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<form {{on "submit" this.createRecipe}}>
+  <h2>Add your recipe here</h2>
+  <dl>
+    <dt>Recipe name</dt>
+    <dd>
+      <Input @value={{this.newRecipeName}} @placeholder="Spaghetti Carbonara" />
+    </dd>
+    <dt>Category</dt>
+    <dd>
+      <Input @value={{this.newCategory}} @placeholder="Italian food" />
+    </dd>
+  </dl>
+  <button class="create-btn" type="submit">Create</button>
+</form>
+
+{{!-- <button
     class="random-button"
     type="button"
     {{on "click" (action this.getRandomMeal)}}
@@ -15,5 +45,4 @@
   <LinkTo @route="ingredients">
     <button class="goto-ingredients-button" type="button">Search based on
       Ingredients</button>
-  </LinkTo>
-</div>
+  </LinkTo> --}}
