@@ -14,6 +14,8 @@
 
 ;; (add-prefix "dct" "http://purl.org/dc/terms/")
 
+(add-prefix "schema" "http://schema.org/")
+
 
 ;;;;;
 ;; The following is the commented out version of those used in the

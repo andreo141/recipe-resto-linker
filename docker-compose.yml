@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   identifier:
@@ -32,7 +32,6 @@ services:
     volumes:
       - ./config/resources:/config
 
-
   emberjs:
     build:
       context: ./frontend/
@@ -43,15 +42,14 @@ services:
       - ./frontend:/frontend
       - /node_modules
 
-        #  flask-backend:
-        #    image: localhost/python-rdf-workshop:latest
-        #    build:
-        #      context: ./backend
-        #      dockerfile: docker/Dockerfile
-        #    environment: 
-        #      FLASK_DEBUG: 1
-        #    volumes: 
-        #      - ./backend/api:/app/api
-        #    ports:
-        #      - 5000:5000 
-   
+  # flask-backend:
+  #   image: localhost/python-rdf-workshop:latest
+  #   build:
+  #     context: ./backend
+  #     dockerfile: docker/Dockerfile
+  #   environment:
+  #     FLASK_DEBUG: 1
+  #   volumes:
+  #     - ./backend/api:/app/api
+  #   ports:
+  #     - 5000:5000
