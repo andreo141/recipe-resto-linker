@@ -24,8 +24,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/recipes/"
   end
 
-  match "/creators/*path" do
-    Proxy.forward conn, path, "http://resource/creators/"
+  match "/restaurants/*path" do
+    Proxy.forward conn, path, "http://resource/restaurants/"
   end
 
 

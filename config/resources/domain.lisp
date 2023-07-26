@@ -12,9 +12,9 @@
 (define-resource restaurant ()
   :class (s-prefix "schema:Restaurant")
   :properties `((:name :string ,(s-prefix "schema:name"))
-                (:description :string ,(s-prefix "schema:description"))
-  :has-many `((recipe :via , (s-prefix "schema:Restaurant")
+                (:item :string ,(s-prefix "schema:hasMenuItem")))
+  :has-many `((recipe :via , (s-prefix "schema:hasMenuItem")
                         :inverse t
-                        :as "recipes")))
+                        :as "recipes"))
   :resource-base (s-url "http://mu.semte.ch/application/recipe-app/restaurants/")
   :on-path "restaurants")

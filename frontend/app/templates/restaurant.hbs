@@ -1,0 +1,48 @@
+{{page-title "Restaurant"}}
+
+<header>
+  <h1>Restaurant endpoint</h1>
+</header>
+<div id="global-wrapper">
+  <div class="list-div">
+    <h2>Restaurant list</h2>
+    <ul>
+      {{#each @model as |restaurant|}}
+        <li class="list-recipe">
+          {{restaurant.name}}<small> {{restaurant.item}} </small>
+          <button
+            class="remove-btn"
+            type="button"
+            {{on "click" (fn this.removeRestaurant restaurant)}}
+          >Remove</button>
+
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <form class="form-adder" {{on "submit" this.createRestaurant}}>
+    <h2>Add your restaurant here</h2>
+    <dl>
+      <dt>Restaurant name</dt>
+      <dd>
+        <Input @value={{this.newRestaurantName}} placeholder="Bavet" />
+      </dd>
+      <dt>Menu item</dt>
+      <dd>
+        <Input @value={{this.newMenuItem}} placeholder="Spaghetti Bolognese" />
+      </dd>
+    </dl>
+    <button class="create-btn" type="submit">Create</button>
+  </form>
+</div>
+{{!-- <button
+    class="random-button"
+    type="button"
+    {{on "click" (action this.getRandomMeal)}}
+  >Get Random Meal</button>
+
+  <LinkTo @route="ingredients">
+    <button class="goto-ingredients-button" type="button">Search based on
+      Ingredients</button>
+  </LinkTo> --}}
