@@ -1,4 +1,5 @@
 /* Global */
+
 body {
   margin: 0 auto;
   height: 100%;
@@ -9,18 +10,14 @@ body {
 }
 
 h1 {
+  display: block;
+  text-align: center;
   font-size: 3rem;
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 0.2rem;
-}
-
-h1,
-h2 {
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 a {
@@ -38,13 +35,13 @@ form {
 }
 
 form > dl > dt {
-  margin: 0.8rem 0.8rem;
+  margin: 0.8rem;
 }
 
 /* classes */
 .create-btn {
   display: flex;
-  background-color: rgba(78, 255, 146, 0.539);
+  background-color: rgb(78 255 146 / 53.9%);
   margin-top: 0.8rem;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -59,4 +56,56 @@ form > dl > dt {
 
 .list-recipe {
   margin: 0.6rem;
+}
+
+.list-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e07219;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-adder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7980f;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+dl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+dl input {
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+div.list-div ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  min-width: 720px;
+}
+
+li.list-recipe {
+  display: flex;
+  margin: 0;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+
+#global-wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }

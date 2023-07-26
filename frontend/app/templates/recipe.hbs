@@ -1,40 +1,45 @@
 {{page-title "Recipe"}}
+<div id="global-wrapper">
+  <header>
+    <h1>Recipe endpoint</h1>
+  </header>
 
-<header>
-  <h1>Recipes</h1>
-</header>
+  <div class="list-div">
+    <h2>Recipe list</h2>
+    {{! app/templates/recipe.hbs }}
+    <ul>
+      {{#each @model as |recipe|}}
+        <li class="list-recipe">
+          {{recipe.name}}<small> {{recipe.category}} </small>
+          <button
+            class="remove-btn"
+            type="button"
+            {{on "click" (fn this.removeRecipe recipe)}}
+          >Remove</button>
 
-<div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 
-  {{! app/templates/recipe.hbs }}
-  <ul>
-    {{#each @model as |recipe|}}
-      <li class="list-recipe">
-        {{recipe.name}}<small> - {{recipe.category}} </small>
-        <button
-          class="remove-btn"
-          {{on "click" (fn this.removeRecipe recipe)}}
-        >Remove</button>
-
-      </li>
-    {{/each}}
-  </ul>
+  <form class="form-adder" {{on "submit" this.createRecipe}}>
+    <h2>Add your recipe here</h2>
+    <dl>
+      <dt>Recipe name</dt>
+      <dd>
+        <Input
+          @value={{this.newRecipeName}}
+          placeholder="Spaghetti Carbonara"
+        />
+      </dd>
+      <dt>Category</dt>
+      <dd>
+        <Input @value={{this.newCategory}} placeholder="Italian food" />
+      </dd>
+    </dl>
+    <button class="create-btn" type="submit">Create</button>
+  </form>
 </div>
-
-<form {{on "submit" this.createRecipe}}>
-  <h2>Add your recipe here</h2>
-  <dl>
-    <dt>Recipe name</dt>
-    <dd>
-      <Input @value={{this.newRecipeName}} @placeholder="Spaghetti Carbonara" />
-    </dd>
-    <dt>Category</dt>
-    <dd>
-      <Input @value={{this.newCategory}} @placeholder="Italian food" />
-    </dd>
-  </dl>
-  <button class="create-btn" type="submit">Create</button>
-</form>
 
 {{!-- <button
     class="random-button"
