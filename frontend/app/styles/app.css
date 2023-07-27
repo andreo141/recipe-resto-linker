@@ -1,5 +1,11 @@
 /* Global */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0 auto;
   height: 100%;
@@ -13,6 +19,8 @@ h1 {
   display: block;
   text-align: center;
   font-size: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 h2 {
@@ -69,9 +77,6 @@ form > dl > dt {
 }
 
 .form-adder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #f7980f;
   padding: 1rem;
   border-radius: 10px;

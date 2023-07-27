@@ -21,13 +21,17 @@ export default class RestaurantController extends Controller {
       return;
     }
     console.log(this.newRestaurantName, this.newMenuItem);
+
     event.preventDefault();
+
     // create the new book
     const restaurant = this.store.createRecord('restaurant', {
       name: this.newRestaurantName,
       item: this.newMenuItem,
     });
+
     restaurant.save();
+
     // clear the input fields
     this.newRestaurantName = '';
     this.newMenuItem = '';
