@@ -4,7 +4,7 @@
   :class (s-prefix "schema:Recipe")
   :properties `((:name :string ,(s-prefix "schema:name"))
                 (:category :string , (s-prefix "schema:recipeCategory")))
-  :has-many `((restaurant :via , (s-prefix "schema:Restaurant")
+  :has-many `((restaurant :via , (s-prefix "schema:hasMenuItem")
                         :as "restaurants"))
   :resource-base (s-url "http://mu.semte.ch/application/recipe-app/recipes/")
   :on-path "recipes")
