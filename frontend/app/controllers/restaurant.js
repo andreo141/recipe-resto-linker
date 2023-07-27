@@ -20,11 +20,10 @@ export default class RestaurantController extends Controller {
       alert('Please enter a valid menu item');
       return;
     }
-    console.log(this.newRestaurantName, this.newMenuItem);
 
     event.preventDefault();
 
-    // create the new book
+    // create the new restaurant
     const restaurant = this.store.createRecord('restaurant', {
       name: this.newRestaurantName,
       item: this.newMenuItem,
