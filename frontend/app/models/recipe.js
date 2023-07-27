@@ -1,6 +1,7 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class RecipeModel extends Model {
   @attr('string') name;
   @attr('string') category;
+  @hasMany('restaurant', { async: true }) restaurant;
 }
