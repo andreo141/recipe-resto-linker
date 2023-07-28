@@ -20,11 +20,11 @@ defmodule Dispatcher do
   # this file.
 
 
-  match "/recipes/*path" do
+  match "/recipes/*path", @any do
     Proxy.forward conn, path, "http://resource/recipes/"
   end
 
-  match "/restaurants/*path" do
+  match "/restaurants/*path", @any do
     Proxy.forward conn, path, "http://resource/restaurants/"
   end
 

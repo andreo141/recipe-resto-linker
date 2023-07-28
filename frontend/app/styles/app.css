@@ -114,3 +114,10 @@ li.list-recipe {
   margin-left: auto;
   margin-right: auto;
 }
+
+select {
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin-top: 1rem;
+}

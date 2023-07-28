@@ -29,7 +29,7 @@
       <dd>
         <Input
           @value={{this.newRecipeName}}
-          placeholder="Spaghetti Carbonara"
+          placeholder="Spaghetti Bolognese"
         />
       </dd>
       <dt>Category</dt>
@@ -37,17 +37,12 @@
         <Input @value={{this.newCategory}} placeholder="Italian food" />
       </dd>
     </dl>
+    <select class="inputfield" {{on "change" this.selectRestaurant}}>
+      <option value="">Select a restaurant</option>
+      {{#each this.restaurants as |restaurant|}}
+        <option value={{restaurant.id}}>{{restaurant.name}}</option>
+      {{/each}}
+    </select>
     <button class="create-btn" type="submit">Create</button>
   </form>
 </div>
-
-{{!-- <button
-    class="random-button"
-    type="button"
-    {{on "click" (action this.getRandomMeal)}}
-  >Get Random Meal</button>
-
-  <LinkTo @route="ingredients">
-    <button class="goto-ingredients-button" type="button">Search based on
-      Ingredients</button>
-  </LinkTo> --}}
