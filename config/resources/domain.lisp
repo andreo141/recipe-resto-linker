@@ -5,7 +5,7 @@
   :properties `((:name :string ,(s-prefix "schema:name"))
                 (:category :string , (s-prefix "schema:recipeCategory")))
   :has-many `((restaurant :via , (s-prefix "schema:hasMenuItem")
-                        :as "restaurant"))
+                        :as "restaurant")) ;TODO: change to 'restaurants'
   :resource-base (s-url "http://mu.semte.ch/application/recipe-app/recipes/")
   :on-path "recipes")
 
@@ -15,6 +15,6 @@
                 (:item :string ,(s-prefix "schema:hasMenuItem")))
   :has-many `((recipe :via , (s-prefix "schema:hasMenuItem")
                         :inverse t
-                        :as "recipe"))
+                        :as "recipe")) ;TODO: change to 'recipes' 
   :resource-base (s-url "http://mu.semte.ch/application/recipe-app/restaurants/")
   :on-path "restaurants")
