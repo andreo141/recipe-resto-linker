@@ -59,7 +59,7 @@ export default class RecipeController extends Controller {
     try {
       await recipe.save();
       recipe.restaurant = [this.existingRestaurant];
-      console.debug('recipe.restaurant', recipe.restaurant);
+      console.debug('recipe.restaurant', recipe.restaurant); // debug
       await recipe.save();
     } catch (e) {
       console.error('Error creating recipe:', e);
