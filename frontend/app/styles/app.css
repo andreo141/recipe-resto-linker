@@ -83,20 +83,20 @@ table {
 /* classes */
 .create-btn {
   display: flex;
-  background-color: #0c0;
+  background-color: rgba(50, 230, 50, 0.732);
   margin-top: 0.8rem;
   padding: 0.5rem;
   font-size: 0.9rem;
 }
 
 .remove-btn {
-  background-color: #f00;
+  background-color: rgba(249, 72, 72, 0.743);
   padding: 0.25rem 0.6rem;
   font-size: 0.9rem;
 }
 
 .list-div {
-  background-color: #e07219;
+  background-color: #8cada7;
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -106,7 +106,8 @@ table {
 .list-div table {
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 80%;
+  table-layout: fixed;
 }
 
 .list-div table td:nth-child(1) {
@@ -125,8 +126,8 @@ table {
 }
 
 .form-adder {
-  background-color: #f7980f;
   padding: 1rem;
+  margin: auto;
   border-radius: 10px;
 }
 
@@ -167,7 +168,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e07219;
+  background-color: #8cada7;
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -182,7 +183,7 @@ select {
 }
 
 .btn-index {
-  background-color: #e36d0d;
+  background-color: #a5d0a8;
   padding: 1rem;
 }
 
@@ -190,9 +191,24 @@ select {
   color: #000;
 }
 .btn-index:hover {
-  background-color: #f7980f;
+  background-color: #b5e1b8;
 }
 
 #index-header {
   justify-content: center;
+}
+
+#adder {
+  display: flex;
+  flex-direction: row;
+  background-color: #8cada7;
+  border-radius: 10px;
+}
+
+.em-2 {
+  color: #f2f4cb;
+}
+
+.em-1 {
+  color: #f2f4cb;
 }
