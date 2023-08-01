@@ -32,7 +32,6 @@ export default class RecipeController extends Controller {
       'restaurant',
       selectedRestaurantId
     );
-    console.log('this.existingRestaurant', this.existingRestaurant); // debug
   }
 
   @action
@@ -55,6 +54,9 @@ export default class RecipeController extends Controller {
       name: this.newRecipeName,
       category: this.newCategory,
     });
+    console.log(this.newRecipeName); // debug
+    console.log(this.newCategory); // debug
+    // if (recipe['name'] === ) {
 
     try {
       await recipe.save();
