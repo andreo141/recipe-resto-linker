@@ -19,6 +19,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 1.7rem;
+  margin-top: 1rem;
 }
 
 nav {
@@ -38,12 +40,8 @@ nav ul li {
 }
 
 h1 {
-  display: block;
-  text-align: center;
   font-size: 3rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-  color: #ccc;
+  color: #dad8d8;
 }
 
 h2 {
@@ -78,6 +76,10 @@ form > dl > dt {
   margin: 0.8rem;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 /* classes */
 .create-btn {
   display: flex;
@@ -91,21 +93,35 @@ form > dl > dt {
   background-color: #f00;
   padding: 0.25rem 0.6rem;
   font-size: 0.9rem;
-  margin-left: 1rem;
-}
-
-.list-recipe {
-  margin: 0.6rem;
 }
 
 .list-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #e07219;
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
+  text-align: center;
+}
+
+.list-div table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.list-div table td:nth-child(1) {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.list-div table td:nth-child(2) {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.list-div table td:nth-child(3) {
+  padding: 0.5rem;
+  text-align: right;
 }
 
 .form-adder {
@@ -132,13 +148,6 @@ div.list-div ul {
   padding: 0;
   margin: 0;
   min-width: 720px;
-}
-
-li.list-recipe {
-  display: flex;
-  margin: 0;
-  padding: 0.5rem;
-  justify-content: space-between;
 }
 
 .global-wrapper {

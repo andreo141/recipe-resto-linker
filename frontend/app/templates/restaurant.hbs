@@ -12,19 +12,21 @@
   </header>
   <div class="list-div">
     <h2>Restaurant list</h2>
-    <ul>
+    <table>
       {{#each @model as |restaurant|}}
-        <li class="list-recipe">
-          {{restaurant.name}}<small> {{restaurant.item}} </small>
-          <button
-            class="remove-btn"
-            type="button"
-            {{on "click" (fn this.removeRestaurant restaurant)}}
-          >Remove</button>
-
-        </li>
+        <tr class="list-recipe">
+          <td>{{restaurant.name}}</td>
+          <td> {{restaurant.item}} </td>
+          <td>
+            <button
+              class="remove-btn"
+              type="button"
+              {{on "click" (fn this.removeRestaurant restaurant)}}
+            >Remove</button>
+          </td>
+        </tr>
       {{/each}}
-    </ul>
+    </table>
   </div>
 
   <form class="form-adder" {{on "submit" this.createRestaurant}}>

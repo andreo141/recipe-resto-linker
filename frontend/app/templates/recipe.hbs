@@ -11,20 +11,20 @@
   </header>
   <div class="list-div">
     <h2>Recipe list</h2>
-    {{! app/templates/recipe.hbs }}
-    <ul>
+    <table>
       {{#each @model as |recipe|}}
-        <li class="list-recipe">
-          {{recipe.name}}<small> {{recipe.category}} </small>
-          <button
-            class="remove-btn"
-            type="button"
-            {{on "click" (fn this.removeRecipe recipe)}}
-          >Remove</button>
-
-        </li>
+        <tr class="list-recipe">
+          <td>{{recipe.name}}</td>
+          <td>{{recipe.category}}</td>
+          <td>
+            <button
+              class="remove-btn"
+              type="button"
+              {{on "click" (fn this.removeRecipe recipe)}}
+            >Remove</button></td>
+        </tr>
       {{/each}}
-    </ul>
+    </table>
   </div>
 
   <form class="form-adder" {{on "submit" this.createRecipe}}>
