@@ -5,19 +5,19 @@ import { inject as service } from '@ember/service';
 
 export default class RestaurantController extends Controller {
   @tracked newRestaurantName = '';
-  @tracked newMenuItem = '';
+  @tracked newRestaurantCategory = '';
 
   @service store;
 
   @action
-  createRestaurant(event) {
-    if (!this.newRestaurantName || typeof this.newRestaurantName !== 'string') {
+  async createRestaurant(event) {
+    if (!this.newRestaurantName) {
       alert('Please enter a valid restaurant name');
       return;
     }
 
-    if (!this.newMenuItem || typeof this.newMenuItem !== 'string') {
-      alert('Please enter a valid menu item');
+    if (!this.newRestaurantCategory) {
+      alert('Please enter a valid restaurant category');
       return;
     }
 
@@ -26,14 +26,18 @@ export default class RestaurantController extends Controller {
     // create the new restaurant
     const restaurant = this.store.createRecord('restaurant', {
       name: this.newRestaurantName,
-      item: this.newMenuItem,
+      category: this.newRestaurantCategory,
     });
-
-    restaurant.save();
+    try {
+      console.log(restaurant.name, restaurant.category);
+      await restaurant.save();
+    } catch (e) {
+      console.error('Error creating restaurant:', e);
+    }
 
     // clear the input fields
     this.newRestaurantName = '';
-    this.newMenuItem = '';
+    this.newRestaurantCategory = '';
   }
   @action
   removeRestaurant(restaurant, event) {

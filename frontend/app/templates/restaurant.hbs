@@ -13,10 +13,12 @@
   <div class="list-div">
     <h2>Restaurant list</h2>
     <table>
+      <th>Restaurant</th>
+      <th>Category</th>
       {{#each @model as |restaurant|}}
         <tr class="list-recipe">
           <td>{{restaurant.name}}</td>
-          <td> {{restaurant.item}} </td>
+          <td> {{restaurant.category}} </td>
           <td>
             <button
               class="remove-btn"
@@ -28,20 +30,20 @@
       {{/each}}
     </table>
   </div>
+
   <section id="adder">
     <form class="form-adder" {{on "submit" this.createRestaurant}}>
       <h2>Add your restaurant here</h2>
-
       <dl>
         <dt>Restaurant name</dt>
         <dd>
           <Input @value={{this.newRestaurantName}} placeholder="Bavet" />
         </dd>
-        <dt>Menu item</dt>
+        <dt>Restaurant category</dt>
         <dd>
           <Input
-            @value={{this.newMenuItem}}
-            placeholder="Spaghetti Bolognese"
+            @value={{this.newRestaurantCategory}}
+            placeholder="Italian Food"
           />
         </dd>
       </dl>

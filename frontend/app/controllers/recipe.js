@@ -37,7 +37,7 @@ export default class RecipeController extends Controller {
   @action
   async selectRestaurant(event) {
     const selectedRestaurantId = event.target.value;
-    this.existingRestaurant = await this.store.peekRecord(
+    this.existingRestaurant = await this.store.findRecord(
       'restaurant',
       selectedRestaurantId
     );
@@ -46,7 +46,7 @@ export default class RecipeController extends Controller {
   @action
   async selectRecipe(event) {
     const selectedRecipeId = event.target.value;
-    this.existingRecipe = await this.store.peekRecord(
+    this.existingRecipe = await this.store.findRecord(
       'recipe',
       selectedRecipeId
     );
@@ -65,15 +65,16 @@ export default class RecipeController extends Controller {
       this.clearInputFields();
       return;
     }
-    const recipe = this.store.createRecord('recipe', {
+    const recipe = await this.store.createRecord('recipe', {
       name: this.newRecipeName,
       category: this.newCategory,
     });
-    console.log('recipe', recipe); // debug
-    console.log('recipe name', recipe.name); // debug
-    console.log('recipe category', recipe.category); // debug
+    console.log('RECIPE:', recipe); // debug
+    console.log('RECIPE NAME:', recipe.name); // debug
+    console.log('RECIPE CATEGORY', recipe.category); // debug
     try {
       await recipe.save();
+      this.clearInputFields();
     } catch (e) {
       console.error('Error creating recipe:', e);
     }
@@ -96,8 +97,15 @@ export default class RecipeController extends Controller {
         'recipe',
         this.existingRecipe.id
       );
-      currentRecipe.restaurant.pushObject(this.existingRestaurant);
+      let currentRestaurant = await this.store.findRecord(
+        'restaurant',
+        this.existingRestaurant.id
+      );
+      console.log(currentRestaurant.recipes.length); // debug
+      (await currentRecipe.restaurants).push(currentRestaurant);
       await currentRecipe.save();
+      await currentRestaurant.save();
+      console.log(currentRecipe.restaurants.length); // debug
     } catch (e) {
       console.error('Error updating recipe:', e);
     }

@@ -80,6 +80,16 @@ table {
   border-collapse: collapse;
 }
 
+th {
+  border-bottom: 1px solid #0000006d;
+  padding: 0.5rem;
+}
+
+td {
+  border-right: 1px solid #0000006d;
+  padding: 0.5rem;
+}
+
 /* classes */
 .create-btn {
   display: flex;
@@ -117,12 +127,14 @@ table {
 
 .list-div table td:nth-child(2) {
   padding: 0.5rem;
-  text-align: center;
+  text-align: left;
+  border: none;
 }
 
 .list-div table td:nth-child(3) {
   padding: 0.5rem;
-  text-align: right;
+  text-align: center;
+  border: none;
 }
 
 .form-adder {
