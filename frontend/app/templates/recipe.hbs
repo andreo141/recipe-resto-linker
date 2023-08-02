@@ -27,32 +27,37 @@
     </table>
   </div>
   <section id="adder">
-    <form class="form-adder" {{on "submit" this.createRecipe}}>
-      <h2>Add <em class="em-1">existing</em> recipe here</h2>
+
+    {{! LINK EXISTING RECIPES }}
+
+    <form class="form-adder" {{on "submit" this.updateRecipe}}>
+      <h2>Link <em class="em-1">existing</em> recipe here</h2>
       <dl>
         <dt>Recipe name</dt>
         <dd>
-          <Input
-            @value={{this.newRecipeName}}
-            placeholder="Spaghetti Bolognese"
-          />
+          <select class="inputfield" {{on "change" this.selectRecipe}}>
+            <option value="">Select a recipe</option>
+            {{#each this.recipes as |recipe|}}
+              <option value={{recipe.id}}>{{recipe.name}}</option>
+            {{/each}}
+          </select>
         </dd>
-        <dt>Category</dt>
-        <dd>
-          <Input @value={{this.newCategory}} placeholder="Italian food" />
-        </dd>
+
+        <dt>Link To</dt>
+        <select class="inputfield" {{on "change" this.selectRestaurant}}>
+          <option value="">Select a restaurant</option>
+          {{#each this.restaurants as |restaurant|}}
+            <option value={{restaurant.id}}>{{restaurant.name}}</option>
+          {{/each}}
+        </select>
       </dl>
-      <select class="inputfield" {{on "change" this.selectRestaurant}}>
-        <option value="">Select a restaurant</option>
-        {{#each this.restaurants as |restaurant|}}
-          <option value={{restaurant.id}}>{{restaurant.name}}</option>
-        {{/each}}
-      </select>
       <button class="create-btn" type="submit">Create</button>
     </form>
 
+    {{! LINK NEW RECIPES }}
+
     <form class="form-adder" {{on "submit" this.createRecipe}}>
-      <h2>Add <em class="em-2"> new </em> recipe here</h2>
+      <h2>Link <em class="em-2"> new </em> recipe here</h2>
       <dl>
         <dt>Recipe name</dt>
         <dd>
@@ -66,12 +71,6 @@
           <Input @value={{this.newCategory}} placeholder="Italian food" />
         </dd>
       </dl>
-      <select class="inputfield" {{on "change" this.selectRestaurant}}>
-        <option value="">Select a restaurant</option>
-        {{#each this.restaurants as |restaurant|}}
-          <option value={{restaurant.id}}>{{restaurant.name}}</option>
-        {{/each}}
-      </select>
       <button class="create-btn" type="submit">Create</button>
     </form>
   </section>
