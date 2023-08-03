@@ -12,6 +12,8 @@
   <div class="list-div">
     <h2>Recipe list</h2>
     <table>
+      <th>Recipe</th>
+      <th>Category</th>
       {{#each @model as |recipe|}}
         <tr class="list-recipe">
           <td>{{recipe.name}}</td>
