@@ -69,9 +69,6 @@ export default class RecipeController extends Controller {
       name: this.newRecipeName,
       category: this.newCategory,
     });
-    console.log('RECIPE:', recipe); // debug
-    console.log('RECIPE NAME:', recipe.name); // debug
-    console.log('RECIPE CATEGORY', recipe.category); // debug
     try {
       await recipe.save();
       this.clearInputFields();
@@ -101,11 +98,8 @@ export default class RecipeController extends Controller {
         'restaurant',
         this.existingRestaurant.id
       );
-      console.log(currentRestaurant.recipes.length); // debug
-      (await currentRecipe.restaurants).push(currentRestaurant);
-      await currentRecipe.save();
+      currentRestaurant.recipes.pushObject(currentRecipe);
       await currentRestaurant.save();
-      console.log(currentRecipe.restaurants.length); // debug
     } catch (e) {
       console.error('Error updating recipe:', e);
     }
