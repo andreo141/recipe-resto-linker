@@ -98,8 +98,9 @@ export default class RecipeController extends Controller {
         'restaurant',
         this.existingRestaurant.id
       );
-      currentRestaurant.recipes.pushObject(currentRecipe);
-      await currentRestaurant.save();
+      let existingRestaurants = await currentRecipe.restaurants;
+      existingRestaurants.pushObject(currentRestaurant);
+      await currentRecipe.save();
     } catch (e) {
       console.error('Error updating recipe:', e);
     }
