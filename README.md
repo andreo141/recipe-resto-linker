@@ -3,11 +3,12 @@ Linked Open Data Project
 
 ## How to set up:
 1. Clone into the repository with ```git clone git@github.com:andreo141/recipe-resto-linker.git```
-2. ```docker compose build``` or ```docker-compose build```
-3. ```cd frontend```
-4. run ```npm install```
-5. ```cd ..```
-6. ```docker compose up``` or ```docker-compose up```
+2. ```cd recipe-resto-linker```
+3. ```docker compose build``` or ```docker-compose build```
+4. ```cd frontend```
+5. run ```npm install --legacy-peer-deps```
+6. ```cd ..```
+7. ```docker compose up``` or ```docker-compose up```
 
 ## Access the frontend:
 go to `http://localhost:4200/`
