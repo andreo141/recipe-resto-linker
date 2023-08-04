@@ -18,17 +18,17 @@ export default class RecipeController extends Controller {
     super(...arguments);
   }
 
-  async init() {
+  init() {
     super.init();
 
     try {
-      this.restaurants = await this.store.findAll('restaurant');
+      this.restaurants = this.store.findAll('restaurant');
     } catch (e) {
       console.error('Error fetching restaurants:', e);
     }
 
     try {
-      this.recipes = await this.store.findAll('recipe');
+      this.recipes = this.store.findAll('recipe');
     } catch (e) {
       console.error('Error fetching restaurants:', e);
     }
