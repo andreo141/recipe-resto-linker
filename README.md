@@ -2,7 +2,7 @@
 Linked Open Data Project
 
 ## How to set up:
-1. Clone into the repository
+1. Clone into the repository with ```git clone git@github.com:andreo141/recipe-resto-linker.git```
 2. ```docker compose build``` or ```docker-compose build```
 3. ```cd frontend```
 4. run ```npm install```
