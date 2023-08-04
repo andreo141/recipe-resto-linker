@@ -16,7 +16,7 @@ RUN npm install -g ember-cli
 EXPOSE 4200
 
 # Launch the application
-ENTRYPOINT ["ember", "serve", "--proxy", "http://recipe-dispatcher-1"]
+ENTRYPOINT ["ember", "serve", "--proxy", "http://recipe-resto-linker-dispatcher-1"]
 
 # Clone all files
 COPY . .
