@@ -1,0 +1,27 @@
+PREFIX schema: <http://schema.org/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+
+        <http://mu.semte.ch/application/recipe-app/restaurants/64CCBD073CF5D20009000010> a schema:Restaurant;
+            mu:uuid "64CCBD073CF5D200090000010";
+            schema:name "Hong Kong";
+            schema:servesCuisine "Chinese Cuisine".
+
+        <http://mu.semte.ch/application/recipe-app/restaurants/64CCBD073CF5D20009000011> a schema:Restaurant;
+            mu:uuid "64CCBD073CF5D20009000011";
+            schema:name "Pita Waterpoort";
+            schema:servesCuisine "Turkish Cuisine".
+
+        <http://mu.semte.ch/application/recipe-app/restaurants/64CCBD073CF5D200090000012> a schema:Restaurant;
+            mu:uuid "64CCBD073CF5D20009000012";
+            schema:name "McDonalds";
+            schema:servesCuisine "Fast Food".
+
+        <http://mu.semte.ch/application/recipe-app/restaurants/64CCBD073CF5D20009000013> a schema:Restaurant;
+            mu:uuid "64CCBD073CF5D20009000013";
+            schema:name "Frituur Max";
+            schema:servesCuisine "Belgian Street Food".
+    }
+}

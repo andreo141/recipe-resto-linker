@@ -1,0 +1,27 @@
+PREFIX schema: <http://schema.org/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+
+        <http://mu.semte.ch/application/recipe-app/recipes/64CCBD073CF5D20009000001> a schema:Recipe;
+            mu:uuid "64CCBD073CF5D20009000001";
+            schema:name "Red Wine";
+            schema:recipeCategory "Drinks".
+
+        <http://mu.semte.ch/application/recipe-app/recipes/64CCBD073CF5D20009000002> a schema:Recipe;
+            mu:uuid "64CCBD073CF5D20009000002";
+            schema:name "Coca Cola";
+            schema:recipeCategory "Drinks".
+
+        <http://mu.semte.ch/application/recipe-app/recipes/64CCBD073CF5D20009000003> a schema:Recipe;
+            mu:uuid "64CCBD073CF5D20009000003";
+            schema:name "Fried Rice";
+            schema:recipeCategory "Extras".
+
+        <http://mu.semte.ch/application/recipe-app/recipes/64CCBD073CF5D20009000004> a schema:Recipe;
+            mu:uuid "64CCBD073CF5D20009000004";
+            schema:name "Fries";
+            schema:recipeCategory "Extras".
+    }
+}

@@ -30,6 +30,25 @@
   </div>
   <section id="adder">
 
+    {{! CREATE NEW RECIPES }}
+
+    <form class="form-adder" {{on "submit" this.createRecipe}}>
+      <h2><em class="em-2">Create</em> new recipe here</h2>
+      <dl>
+        <dt>Recipe name</dt>
+        <dd>
+          <Input
+            @value={{this.newRecipeName}}
+            placeholder="Spaghetti Bolognese"
+          />
+        </dd>
+        <dt>Category</dt>
+        <dd>
+          <Input @value={{this.newCategory}} placeholder="Italian food" />
+        </dd>
+      </dl>
+      <button class="create-btn" type="submit">Create</button>
+    </form>
     {{! LINK EXISTING RECIPES }}
 
     <form class="form-adder" {{on "submit" this.updateRecipe}}>
@@ -56,24 +75,5 @@
       <button class="create-btn" type="submit">Create</button>
     </form>
 
-    {{! CREATE NEW RECIPES }}
-
-    <form class="form-adder" {{on "submit" this.createRecipe}}>
-      <h2><em class="em-2">Create</em> new recipe here</h2>
-      <dl>
-        <dt>Recipe name</dt>
-        <dd>
-          <Input
-            @value={{this.newRecipeName}}
-            placeholder="Spaghetti Bolognese"
-          />
-        </dd>
-        <dt>Category</dt>
-        <dd>
-          <Input @value={{this.newCategory}} placeholder="Italian food" />
-        </dd>
-      </dl>
-      <button class="create-btn" type="submit">Create</button>
-    </form>
   </section>
 </div>
