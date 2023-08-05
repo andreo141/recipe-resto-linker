@@ -1,7 +1,7 @@
 # recipe-resto-linker
 Linked Open Data Project
 
-## How to set up:
+## Getting started:
 1. Clone into the repository with ```git clone git@github.com:andreo141/recipe-resto-linker.git```
 2. ```cd recipe-resto-linker```
 3. ```docker compose build``` or ```docker-compose build```
