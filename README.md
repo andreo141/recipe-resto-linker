@@ -11,11 +11,19 @@ Linked Open Data Project
 7. ```docker compose up``` or ```docker-compose up```
 
 ## Access the frontend:
-go to `http://localhost:4200/`
+Go to [http://localhost:4200/](http://localhost:4200/)
 
 ## Access the backend:
-- For recipes -> `http://localhost/recipes/`
-- For restaurants -> `http://localhost/restaurants/`
+- For recipes -> [http://localhost/recipes/](http://localhost/recipes/)
+- For restaurants -> [http://localhost/restaurants/](http://localhost/restaurants/)
 
-## Access the triplestore:
-go to `http://localhost:8890`
+## Test the SPARQL endpoint
+1. Go to [http://localhost:8890/sparql/](http://localhost:8890/sparql/)
+2. Set the Default Data Set Name to `http://mu.semte.ch/graphs/public`
+3. Gather all the data with the following query
+```sql
+SELECT ?s ?p ?o WHERE{
+?s ?p ?o .
+}
+```
+
