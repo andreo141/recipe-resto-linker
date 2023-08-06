@@ -26,4 +26,10 @@ SELECT ?s ?p ?o WHERE{
 ?s ?p ?o .
 }
 ```
+## Screenshots
 
+### Restaurant endpoint
+![Alt text](/frontend/public/screenshot1.png?raw=true)
+
+### Recipe endpoint
+![Alt text](/frontend/public/screenshot2.png?raw=true)
