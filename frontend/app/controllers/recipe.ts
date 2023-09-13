@@ -39,10 +39,10 @@ export default class RecipeController extends Controller {
     const target = event.target as HTMLSelectElement;
     if (target) {
       const selectedRestaurantId = target.value;
-      this.existingRestaurant = await this.store.findRecord(
+      this.existingRestaurant = (await this.store.findRecord(
         'restaurant',
         selectedRestaurantId
-      );
+      )) as Restaurant;
     }
   }
 
@@ -51,10 +51,10 @@ export default class RecipeController extends Controller {
     const target = event.target as HTMLSelectElement;
     if (target) {
       const selectedRecipeId = target.value;
-      this.existingRecipe = await this.store.findRecord(
+      this.existingRecipe = (await this.store.findRecord(
         'recipe',
         selectedRecipeId
-      );
+      )) as Recipe;
     }
   }
 
