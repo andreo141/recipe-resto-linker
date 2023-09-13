@@ -2,15 +2,16 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+import Store from '@ember-data/store';
+import Restaurant from 'frontend/models/restaurant';
 
 export default class RestaurantController extends Controller {
-  @tracked newRestaurantName = '';
-  @tracked newRestaurantCategory = '';
-
-  @service store;
+  @tracked newRestaurantName: string = '';
+  @tracked newRestaurantCategory: string = '';
+  @service store!: Store;
 
   @action
-  async createRestaurant(event) {
+  async createRestaurant(event: Event): Promise<void> {
     if (!this.newRestaurantName) {
       alert('Please enter a valid restaurant name');
       return;
@@ -27,7 +28,7 @@ export default class RestaurantController extends Controller {
     const restaurant = this.store.createRecord('restaurant', {
       name: this.newRestaurantName,
       category: this.newRestaurantCategory,
-    });
+    }) as Restaurant;
     try {
       console.log(restaurant.name, restaurant.category);
       await restaurant.save();
@@ -40,8 +41,8 @@ export default class RestaurantController extends Controller {
     this.newRestaurantCategory = '';
   }
   @action
-  removeRestaurant(restaurant, event) {
+  async removeRestaurant(restaurant: Restaurant, event: Event): Promise<void> {
     event.preventDefault();
-    restaurant.destroyRecord();
+    await restaurant.destroyRecord();
   }
 }
