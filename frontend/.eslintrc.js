@@ -2,14 +2,22 @@
 
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
+    sourceType: 'module',
+    requireConfigFile: false,
+    babelOptions: {
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
+      ],
+    },
   },
-  plugins: ['ember', '@typescript-eslint'],
+  plugins: ['ember'],
   extends: [
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
+    'eslint:recommended',
+    'plugin:ember/recommended',
+    'plugin:prettier/recommended',
   ],
   env: {
     browser: true,
@@ -31,29 +39,13 @@ module.exports = {
         './server/**/*.js',
       ],
       parserOptions: {
-        sourceType: 'tsconfig.json',
+        sourceType: 'script',
       },
       env: {
         browser: false,
         node: true,
       },
       extends: ['plugin:n/recommended'],
-    },
-    {
-      // typescript files
-      files: ['**/*.ts'],
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: __dirname,
-      },
-      plugins: ['@typescript-eslint'],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-      ],
-      rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'error',
-      },
     },
     {
       // test files
